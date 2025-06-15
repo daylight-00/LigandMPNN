@@ -826,6 +826,7 @@ if __name__ == "__main__":
     argparser.add_argument(
         "--out_folder",
         type=str,
+        default='output',
         help="Path to a folder to output sequences, e.g. /home/out/",
     )
     argparser.add_argument(
