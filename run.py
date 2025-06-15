@@ -675,6 +675,7 @@ def main(args) -> None:
 
 
 if __name__ == "__main__":
+    BASE_PATH = os.environ.get("LIGAND_MPNN_PATH", ".")
     argparser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
@@ -693,31 +694,31 @@ if __name__ == "__main__":
     argparser.add_argument(
         "--checkpoint_protein_mpnn",
         type=str,
-        default="./model_params/proteinmpnn_v_48_020.pt",
+        default=f"{BASE_PATH}/model_params/proteinmpnn_v_48_020.pt",
         help="Path to model weights.",
     )
     argparser.add_argument(
         "--checkpoint_ligand_mpnn",
         type=str,
-        default="./model_params/ligandmpnn_v_32_010_25.pt",
+        default=f"{BASE_PATH}/model_params/ligandmpnn_v_32_010_25.pt",
         help="Path to model weights.",
     )
     argparser.add_argument(
         "--checkpoint_per_residue_label_membrane_mpnn",
         type=str,
-        default="./model_params/per_residue_label_membrane_mpnn_v_48_020.pt",
+        default=f"{BASE_PATH}/model_params/per_residue_label_membrane_mpnn_v_48_020.pt",
         help="Path to model weights.",
     )
     argparser.add_argument(
         "--checkpoint_global_label_membrane_mpnn",
         type=str,
-        default="./model_params/global_label_membrane_mpnn_v_48_020.pt",
+        default=f"{BASE_PATH}/model_params/global_label_membrane_mpnn_v_48_020.pt",
         help="Path to model weights.",
     )
     argparser.add_argument(
         "--checkpoint_soluble_mpnn",
         type=str,
-        default="./model_params/solublempnn_v_48_020.pt",
+        default=f"{BASE_PATH}/model_params/solublempnn_v_48_020.pt",
         help="Path to model weights.",
     )
 
@@ -933,7 +934,7 @@ if __name__ == "__main__":
     argparser.add_argument(
         "--checkpoint_path_sc",
         type=str,
-        default="./model_params/ligandmpnn_sc_v_32_002_16.pt",
+        default=f"{BASE_PATH}/model_params/ligandmpnn_sc_v_32_002_16.pt",
         help="Path to model weights.",
     )
 
